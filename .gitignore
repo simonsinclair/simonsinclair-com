@@ -4,6 +4,6 @@
 
 # Dirs.
 .firebase
-.next
+build
 node_modules
 public

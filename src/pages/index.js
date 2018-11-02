@@ -1,11 +1,9 @@
 import Layout from '../components/Layout';
 
 const Index = () => (
-  <div>
-    <Layout>
-      <h1>Simon Sinclair</h1>
-    </Layout>
-  </div>
+  <Layout>
+    <h1 className="logotype">Simon Sinclair</h1>
+  </Layout>
 );
 
 export default Index;
