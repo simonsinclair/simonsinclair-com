@@ -1,0 +1,9 @@
+# Files
+.DS_Store
+*.log
+
+# Dirs.
+.firebase
+.next
+node_modules
+public
