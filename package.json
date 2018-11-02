@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "npm run build && next export -o public"
+    "export": "npm run build && next export -o public",
+    "deploy": "trash .next public && npm run export && firebase deploy"
   },
   "author": "Simon Sinclair",
   "license": "UNLICENSED",
@@ -14,5 +15,8 @@
     "next": "^7.0.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
+  },
+  "devDependencies": {
+    "trash-cli": "^1.4.0"
   }
 }
