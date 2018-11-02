@@ -1,11 +1,11 @@
-export default () => (
+import Layout from '../components/Layout';
+
+const Index = () => (
   <div>
-    <div>Hello, World!</div>
-    <style jsx global>{`
-      body {
-        color: #444;
-        background-color: #F8F8F8;
-      }
-    `}</style>
+    <Layout>
+      <h1>Simon Sinclair</h1>
+    </Layout>
   </div>
 );
+
+export default Index;
