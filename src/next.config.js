@@ -17,6 +17,7 @@ module.exports = withCss({
     //
 
     await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'));
+    await copyFile(join(dir, 'sitemap.xml'), join(outDir, 'sitemap.xml'));
     await copyFile(join(dir, 'favicon.ico'), join(outDir, 'favicon.ico'));
 
     return {
