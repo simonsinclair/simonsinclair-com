@@ -7,12 +7,7 @@ const GA_TRACKING_ID = 'UA-128283216-1';
 
 const generateGaTrackingScript = (trackingId) => {
   return {
-    __html:
-`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', '${ trackingId }');`
+    __html: `function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","${ trackingId }");`
   }
 }
 
