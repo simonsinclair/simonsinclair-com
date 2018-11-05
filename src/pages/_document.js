@@ -2,7 +2,7 @@ import Document, { Head, Main, NextScript } from 'next/document';
 
 const GA_TRACKING_ID = 'UA-128283216-1';
 
-const createGaTrackingScript = (trackingId) => {
+const generateGaTrackingScript = (trackingId) => {
   return {
     __html:
 `window.dataLayer = window.dataLayer || [];
@@ -25,7 +25,7 @@ export default class CustomDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <script async src={ `https://www.googletagmanager.com/gtag/js?id=${ GA_TRACKING_ID }` } />
-          <script dangerouslySetInnerHTML={ createGaTrackingScript() } />
+          <script dangerouslySetInnerHTML={ generateGaTrackingScript(GA_TRACKING_ID) } />
         </Head>
         <body>
           <Main />
