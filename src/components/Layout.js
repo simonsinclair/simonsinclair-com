@@ -1,6 +1,6 @@
 import { string } from 'prop-types';
-
 import normalizeCss from 'normalize.css';
+
 import Head from '../components/Head';
 
 const Layout = (props) => (
