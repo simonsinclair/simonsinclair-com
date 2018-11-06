@@ -1,8 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 
-// To do:
-// - Move GA stuff to Head.js and delete this file(?)
-
 const GA_TRACKING_ID = 'UA-128283216-1';
 
 const generateGaTrackingScript = (trackingId) => {
