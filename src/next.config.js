@@ -3,10 +3,9 @@ const { join } = require('path');
 const { promisify } = require('util');
 const copyFile = promisify(fs.copyFile);
 
-const withCss = require('@zeit/next-css');
-
-module.exports = withCss({
+module.exports = {
   distDir: '../build',
+
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
     if (dev) {
       return defaultPathMap;
@@ -27,5 +26,24 @@ module.exports = withCss({
       // Next JS to export its dynamic one, which it does by default.
       '/404.html': { page: '/_error' }
     };
-  }
-});
+  },
+
+  // Consume styles from regular CSS files.
+  // - https://github.com/zeit/styled-jsx#styles-in-regular-css-files
+  webpack: (config, { defaultLoaders }) => {
+    config.module.rules.push({
+      test: /\.css$/,
+      use: [
+        defaultLoaders.babel,
+        {
+          loader: require('styled-jsx/webpack').loader,
+          options: {
+            type: 'scoped',
+          },
+        },
+      ],
+    });
+
+    return config;
+  },
+};
