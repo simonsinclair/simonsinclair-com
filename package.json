@@ -7,7 +7,7 @@
     "dev": "next ./src",
     "build": "next build ./src",
     "export": "npm run build && next export ./src -o ./public",
-    "deploy": "trash ./.next ./public && npm run export && firebase deploy"
+    "deploy": "trash ./build ./public && npm run export && firebase deploy"
   },
   "author": "Simon Sinclair",
   "license": "UNLICENSED",
