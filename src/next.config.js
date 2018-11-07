@@ -3,7 +3,7 @@ const { join } = require('path');
 const { promisify } = require('util');
 const copyFile = promisify(fs.copyFile);
 
-module.exports = {
+let config = {
   distDir: '../build',
 
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
@@ -12,7 +12,7 @@ module.exports = {
     }
 
 
-    // Export.
+    // Export - !dev.
     //
 
     await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'));
@@ -47,3 +47,24 @@ module.exports = {
     return config;
   },
 };
+
+if (process.env.BUNDLE_ANALYZE) {
+  const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
+  config = withBundleAnalyzer({
+    analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+    analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+    bundleAnalyzerConfig: {
+      server: {
+        analyzerMode: 'static',
+        reportFilename: '../bundles/server.html'
+      },
+      browser: {
+        analyzerMode: 'static',
+        reportFilename: '../bundles/client.html'
+      },
+    },
+    ...config,
+  });
+}
+
+module.exports = config;
