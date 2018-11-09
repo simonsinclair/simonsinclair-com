@@ -2,10 +2,10 @@ import Page from '../components/Page';
 
 const Index = () => (
   <Page
-    title="Simon Sinclair &mdash; Home"
+    title="Simon Sinclair &mdash; About"
     description="Simon Sinclair is a multidisciplinary UX Designer living in London, UK."
   >
-    <h1 className="logotype">Simon Sinclair</h1>
+    <h1 className="logotype">About</h1>
     <style jsx="">{`
       .logotype {
         margin-top: 0;

@@ -1,14 +1,23 @@
 import { string } from 'prop-types';
 import normalizeCss from 'normalize.css';
+import Router from 'next/router';
 
-import Head from '../components/Head';
+import Head from './Head';
+import Nav from './Nav';
+import * as gtag from '../lib/gtag';
 
-const Layout = (props) => (
+Router.events.on('routeChangeComplete', url => {
+  gtag.pageview(url);
+  console.log('routeChangeComplete', url);
+});
+
+const Page = (props) => (
   <div>
     <Head>
       <title>{ props.title || '' }</title>
       <meta name="description" content={ props.description || '' } />
     </Head>
+    <Nav />
     { props.children }
     <style jsx="" global="">{`
       ${ normalizeCss }
@@ -59,9 +68,9 @@ const Layout = (props) => (
   </div>
 );
 
-Layout.propTypes = {
+Page.propTypes = {
   title: string,
   description: string,
 };
 
-export default Layout;
+export default Page;

@@ -1,9 +1,9 @@
-import Layout from '../components/Layout';
+import Page from '../components/Page';
 
 const Error = () => (
-  <Layout title="Simon Sinclair &mdash; Not Found">
+  <Page title="Simon Sinclair &mdash; Not Found">
     <h1 className="logotype">404</h1>
-  </Layout>
+  </Page>
 );
 
 export default Error;
