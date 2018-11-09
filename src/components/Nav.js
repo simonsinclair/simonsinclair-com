@@ -4,13 +4,13 @@ export default () => (
   <nav>
     <ul>
       <li>
-          <a href="/">Home</a>
         <Link href="/" prefetch>
+          <a>Home</a>
         </Link>
       </li>
       <li>
         <Link href="/about" prefetch>
-          <a href="/about">About</a>
+          <a>About</a>
         </Link>
       </li>
     </ul>
