@@ -4,8 +4,8 @@ export default () => (
   <nav>
     <ul>
       <li>
-        <Link href="/">
           <a href="/">Home</a>
+        <Link href="/" prefetch>
         </Link>
       </li>
       <li>
