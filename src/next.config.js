@@ -21,6 +21,7 @@ let config = {
 
     return {
       '/': { page: '/'},
+      '/about/': { page: '/about'},
 
       // Our static 404's named '_error', because we don't need or want
       // Next JS to export its dynamic one, which it does by default.
