@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default () => (
+const Nav = () => (
   <nav>
     <ul>
       <li>
@@ -9,10 +9,17 @@ export default () => (
         </Link>
       </li>
       <li>
-        <Link href="/about/" prefetch>
+        <Link href="/#work" prefetch>
+          <a>Work</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/about" prefetch>
           <a>About</a>
         </Link>
       </li>
     </ul>
   </nav>
 );
+
+export default Nav;

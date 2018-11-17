@@ -53,7 +53,7 @@ let nextConfig = {
 };
 
 if (process.env.BUNDLE_ANALYZE) {
-  // eslint-disable-next-line global-require
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
   const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
   nextConfig = withBundleAnalyzer({
     analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
