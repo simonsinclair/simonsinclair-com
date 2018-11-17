@@ -1,7 +1,7 @@
 {
   "name": "simonsinclair-com",
   "version": "0.1.0",
-  "description": "My site.",
+  "description": "My website.",
   "repository": "github:simonsinclair/simonsinclair-com",
   "main": "pages/index.js",
   "scripts": {
