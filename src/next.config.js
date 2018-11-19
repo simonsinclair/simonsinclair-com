@@ -17,9 +17,13 @@ let nextConfig = {
     // Production
     // ==========
 
-    await copyFile(join(dir, 'robots.txt'), join(outDir, 'robots.txt'));
-    await copyFile(join(dir, 'sitemap.xml'), join(outDir, 'sitemap.xml'));
-    await copyFile(join(dir, 'favicon.ico'), join(outDir, 'favicon.ico'));
+    [
+      'robots.txt',
+      'sitemap.xml',
+      'favicon.ico',
+    ].forEach(async (file) => {
+      await copyFile(join(dir, file), join(outDir, file));
+    });
 
     return {
       '/': { page: '/' },
@@ -33,7 +37,7 @@ let nextConfig = {
 
   // Consume styles from regular CSS files.
   // - https://github.com/zeit/styled-jsx#styles-in-regular-css-files
-  webpack: (webpackConfig, { defaultLoaders }) => {
+  webpack: (webpackConfig, { isServer, defaultLoaders }) => {
     webpackConfig.module.rules.push({
       test: /\.css$/,
       use: [
@@ -47,6 +51,21 @@ let nextConfig = {
         },
       ],
     });
+
+    // 'eslint-loader'
+    // Reference: https://github.com/sayuti-daniel/next-eslint/blob/master/index.js
+    if (!isServer) {
+      webpackConfig.module.rules.push({
+        enforce: 'pre', // https://github.com/webpack-contrib/eslint-loader#usage
+        test: /\.jsx$/,
+        use: [{
+          loader: 'eslint-loader',
+          options: {
+            failOnError: true,
+          },
+        }],
+      });
+    }
 
     return webpackConfig;
   },
