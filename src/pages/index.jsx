@@ -6,6 +6,7 @@ const Index = () => (
     description="Simon Sinclair is a multidisciplinary UX Designer living in London, UK."
   >
     <h1 className="logotype">Simon Sinclair</h1>
+    <h2 id="work">Work</h2>
     <style jsx>
       {`
         .logotype {
