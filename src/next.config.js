@@ -57,7 +57,8 @@ let nextConfig = {
     if (!isServer) {
       webpackConfig.module.rules.push({
         enforce: 'pre', // https://github.com/webpack-contrib/eslint-loader#usage
-        test: /\.jsx$/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: [{
           loader: 'eslint-loader',
           options: {
