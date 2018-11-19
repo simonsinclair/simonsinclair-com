@@ -5,11 +5,12 @@
   "repository": "github:simonsinclair/simonsinclair-com",
   "main": "pages/index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "next ./src",
+    "start": "next ./src",
     "build": "next build ./src",
-    "export": "npm run build && next export ./src -o ./public",
-    "deploy": "trash ./build ./public && npm run export && firebase deploy",
+    "preexport": "npm run build",
+    "export": "next export ./src -o ./public",
+    "predeploy": "trash ./build ./public && npm run export",
+    "deploy": "firebase deploy",
     "analyse": "BUNDLE_ANALYZE=both npm run build"
   },
   "author": "Simon Sinclair",
