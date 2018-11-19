@@ -1,6 +1,9 @@
 module.exports = {
   parser: "babel-eslint",
   extends: 'airbnb',
+  env: {
+    browser: true,
+  },
   rules: {
     // In a Next JS project, React
     // doesn't have to be in-scope.
