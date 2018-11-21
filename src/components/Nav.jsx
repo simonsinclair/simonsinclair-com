@@ -1,25 +1,37 @@
+import PropTypes from 'prop-types';
+import { withRouter } from 'next/router';
 import Link from 'next/link';
 
-const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/" prefetch>
-          <a>Home</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/#work">
-          <a>Work</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/about" prefetch>
-          <a>About</a>
-        </Link>
-      </li>
-    </ul>
-  </nav>
-);
+const Nav = ({ router }) => {
+  const { route } = router;
 
-export default Nav;
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link href="/" prefetch>
+            <a className={route === '/' ? 'active' : ''}>Home</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/about" prefetch>
+            <a className={route === '/about' ? 'active' : ''}>About</a>
+          </Link>
+        </li>
+      </ul>
+      <style jsx>
+        {`
+          .active {
+            color: #FFF;
+          }
+        `}
+      </style>
+    </nav>
+  );
+};
+
+Nav.propTypes = {
+  router: PropTypes.shape({}).isRequired,
+};
+
+export default withRouter(Nav);
