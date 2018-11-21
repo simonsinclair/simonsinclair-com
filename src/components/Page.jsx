@@ -8,7 +8,6 @@ import * as gtag from '../lib/gtag';
 
 Router.events.on('routeChangeComplete', (url) => {
   gtag.pageview(url);
-  // console.log('routeChangeComplete', url);
 });
 
 const Page = ({ title, description, children }) => (
