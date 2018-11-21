@@ -12,5 +12,7 @@ module.exports = {
     // Next JS's <Link /> component
     // requires an <a /> as its child.
     "jsx-a11y/anchor-is-valid": 0,
+
+    "no-console": 0,
   },
 };
