@@ -17,9 +17,9 @@ let nextConfig = {
     // Production
     // ==========
 
-    // Copy files that aren't process by Next JS to 'public'.
-    const files = ['robots.txt', 'sitemap.xml', 'favicon.ico'];
-    const queue = files.map(file => copyFile(join(dir, file), join(outDir, file)));
+    // Copy files that aren't processed by Next JS to 'public'.
+    const filenames = ['robots.txt', 'sitemap.xml', 'favicon.ico'];
+    const queue = filenames.map(filename => copyFile(join(dir, filename), join(outDir, filename)));
     await Promise.all(queue);
 
     return {
