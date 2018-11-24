@@ -17,13 +17,10 @@ let nextConfig = {
     // Production
     // ==========
 
-    [
-      'robots.txt',
-      'sitemap.xml',
-      'favicon.ico',
-    ].forEach(async (file) => {
-      await copyFile(join(dir, file), join(outDir, file));
-    });
+    // Copy files that aren't process by Next JS to 'public'.
+    const files = ['robots.txt', 'sitemap.xml', 'favicon.ico'];
+    const queue = files.map(file => copyFile(join(dir, file), join(outDir, file)));
+    await Promise.all(queue);
 
     return {
       '/': { page: '/' },
