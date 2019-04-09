@@ -24,14 +24,8 @@ const Layout = (props) => (
         box-sizing: inherit;
       }
 
-      body,
-      html {
-        height: 100%;
-      }
-
       body {
-        background-color: #193441;
-        color: #FCFFF5;
+        color: #444;
         font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif;
         font-size: 1.1875rem;
         line-height: 1.6875rem;
