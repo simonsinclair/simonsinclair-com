@@ -9,15 +9,16 @@ const Nav = ({ router }) => {
     <nav>
       <ul>
         <li>
-          <Link href="/" prefetch>
+          <Link href="/">
             <a className={route === '/' ? 'active' : ''}>Home</a>
           </Link>
         </li>
       </ul>
+
       <style jsx>
         {`
           .active {
-            color: #FFF;
+            font-weight: bold;
           }
         `}
       </style>
