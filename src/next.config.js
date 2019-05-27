@@ -7,6 +7,7 @@ const copyFile = promisify(fs.copyFile);
 let nextConfig = {
   distDir: '../build',
 
+  // https://nextjs.org/docs#copying-custom-files
   async exportPathMap(defaultPathMap, {
     dev, dir, outDir,
   }) {
