@@ -13,11 +13,6 @@ const Nav = ({ router }) => {
             <a className={route === '/' ? 'active' : ''}>Home</a>
           </Link>
         </li>
-        <li>
-          <Link href="/about" prefetch>
-            <a className={route === '/about' ? 'active' : ''}>About</a>
-          </Link>
-        </li>
       </ul>
       <style jsx>
         {`
