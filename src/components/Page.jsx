@@ -1,14 +1,8 @@
 import PropTypes from 'prop-types';
 import normalizeCss from 'normalize.css';
-import Router from 'next/router';
 
 import Head from './Head';
 import Nav from './Nav';
-import * as gtag from '../lib/gtag';
-
-Router.events.on('routeChangeComplete', (url) => {
-  gtag.pageview(url);
-});
 
 const Page = ({ title, description, children }) => (
   <div>
