@@ -7,7 +7,7 @@ export const pageview = (url) => {
       page_path: url,
     });
   } catch (err) {
-    console.error('gtag pageview error', err);
+    console.error('gtag.pageview error', err);
   }
 };
 
@@ -22,6 +22,6 @@ export const event = ({
       value,
     });
   } catch (err) {
-    console.error('gtag event error', err);
+    console.error('gtag.event error', err);
   }
 };
