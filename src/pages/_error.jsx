@@ -1,15 +1,15 @@
 import React from 'react';
-import Page from '../components/Page';
+import Layout from '../components/Layout';
 
 const Error = () => (
-  <Page title="Simon Sinclair &mdash; Not Found">
+  <Layout title="Simon Sinclair &mdash; Not Found">
     <h1 className="logotype">404</h1>
     <style jsx>
       {`
         .logotype {}
       `}
     </style>
-  </Page>
+  </Layout>
 );
 
 export default Error;
