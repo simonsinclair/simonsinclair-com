@@ -1,7 +1,7 @@
-import Layout from '../components/Layout';
+import Page from '../components/Page';
 
 const Index = () => (
-  <Layout
+  <Page
     title="Simon Sinclair &mdash; Home"
     description="Simon Sinclair is a multidisciplinary UX Designer living in London, UK."
   >
@@ -14,7 +14,7 @@ const Index = () => (
         .introduction {}
       `}
     </style>
-  </Layout>
+  </Page>
 );
 
 export default Index;

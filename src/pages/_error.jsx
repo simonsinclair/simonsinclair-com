@@ -1,11 +1,11 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Page from '../components/Page';
 
 const Error = () => (
-  <Layout title="Simon Sinclair &mdash; Not Found">
-    <h1>Not Found</h1>
+  <Page title="Simon Sinclair &mdash; Page Not Found">
+    <h1>Page Not Found</h1>
     <p>Sorry, that page couldn&apos;t be found.</p>
-  </Layout>
+  </Page>
 );
 
 export default Error;
