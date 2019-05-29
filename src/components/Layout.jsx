@@ -5,11 +5,11 @@ import Head from './Head';
 import Masthead from './Masthead';
 import Footer from './Footer';
 
-const Page = ({ title, description, children }) => (
+const Layout = ({ title, description, children }) => (
   <div>
     <Head>
-      <title>{ title || '' }</title>
-      <meta name="description" content={description || ''} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
     </Head>
     <Masthead />
     { children }
@@ -38,15 +38,15 @@ const Page = ({ title, description, children }) => (
   </div>
 );
 
-Page.propTypes = {
+Layout.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
-Page.defaultProps = {
+Layout.defaultProps = {
   title: '',
   description: '',
 };
 
-export default Page;
+export default Layout;
