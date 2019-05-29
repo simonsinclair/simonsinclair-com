@@ -15,7 +15,7 @@ const Layout = ({ title, description, children }) => (
     { children }
     <Footer />
 
-    <style jsx="" global="">
+    <style jsx global>
       {`
         ${normalizeCss}
 
