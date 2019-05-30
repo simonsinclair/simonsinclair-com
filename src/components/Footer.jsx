@@ -2,6 +2,9 @@
 // import * as gtag from '../lib/gtag';
 
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+
   const handleClickExternal = (e) => {
     e.preventDefault();
     // gtag.event({
@@ -13,12 +16,12 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      <p>Copyright &copy; 2000&ndash;2019 Simon Sinclair. <a onClick={handleClickExternal} href="https://github.com/simonsinclair/simonsinclair-com">Source</a>.</p>
+    <footer className="container">
+      <p><small>&copy; {year} Simon Sinclair. <a onClick={handleClickExternal} href="https://github.com/simonsinclair/simonsinclair-com">Source</a>.</small></p>
 
       <style jsx>
         {`
-          p {}
+          footer {}
         `}
       </style>
     </footer>
