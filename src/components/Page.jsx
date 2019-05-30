@@ -30,9 +30,35 @@ const Layout = ({ title, description, children }) => (
         }
 
         body {
-          color: #444;
-          font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Oxygen, Ubuntu, Cantarell, “Fira Sans”, “Droid Sans”, “Helvetica Neue”, sans-serif;
+          color: #111;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+          margin: 0;
         }
+
+        a {
+          text-decoration: none;
+        }
+
+        .container {
+          margin: 0 auto;
+          max-width: 960px;
+          padding-right: 16px;
+          padding-left: 16px;
+        }
+
+        .nav-list {
+          display: flex;
+          padding-left: 0;
+          list-style: none;
+          margin-left: -0.5em;
+        }
+          .nav-list li {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+          }
+          .nav-list a {
+            display: block;
+          }
       `}
     </style>
   </div>
