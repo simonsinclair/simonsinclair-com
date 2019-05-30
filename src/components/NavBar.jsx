@@ -6,28 +6,20 @@ const Nav = ({ router }) => {
   const { route } = router;
 
   return (
-    <nav>
+    <nav className="nav-bar">
       <ul className="nav-list">
         <li>
           <Link href="/">
             <a className={route === '/' ? 'active' : ''}>Home</a>
           </Link>
         </li>
-        <li>
-          <Link href="/about">
-            <a className={route === '/about' ? 'active' : ''}>About</a>
-          </Link>
-        </li>
       </ul>
 
       <style jsx>
         {`
+          .nav-bar {}
           .active {
             border-bottom: 2px solid;
-          }
-
-          a {
-            display: block;
           }
         `}
       </style>
