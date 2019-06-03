@@ -5,7 +5,7 @@ import Head from './Head';
 import Masthead from './Masthead';
 import Footer from './Footer';
 
-const Layout = ({ title, description, children }) => (
+const Page = ({ title, description, children }) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -64,15 +64,15 @@ const Layout = ({ title, description, children }) => (
   </div>
 );
 
-Layout.propTypes = {
+Page.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
-Layout.defaultProps = {
+Page.defaultProps = {
   title: '',
   description: '',
 };
 
-export default Layout;
+export default Page;
