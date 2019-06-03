@@ -12,7 +12,7 @@ const Page = ({ title, description, children }) => (
       <meta name="description" content={description} />
     </Head>
     <Masthead />
-    { children }
+    {children}
     <Footer />
 
     <style jsx global>
@@ -47,7 +47,6 @@ const Page = ({ title, description, children }) => (
         }
 
         .nav-list {
-          display: flex;
           padding-left: 0;
           list-style: none;
           margin-left: -0.5em;
@@ -59,6 +58,13 @@ const Page = ({ title, description, children }) => (
           .nav-list a {
             display: block;
           }
+
+        .nav-list--inline {
+          display: flex;
+        }
+        .nav-list--inline a {
+          display: inline-block;
+        }
       `}
     </style>
   </div>
