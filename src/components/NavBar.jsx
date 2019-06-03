@@ -7,7 +7,7 @@ const Nav = ({ router }) => {
 
   return (
     <nav className="nav-bar">
-      <ul className="nav-list">
+      <ul className="nav-list nav-list--inline">
         <li>
           <Link href="/">
             <a className={route === '/' ? 'active' : ''}>Home</a>
