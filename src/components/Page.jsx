@@ -73,7 +73,10 @@ const Page = ({ title, description, children }) => (
 Page.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+
+  // Anything that can be rendered: numbers, strings, elements
+  // or an array (or fragment) containing these types.
+  children: PropTypes.node.isRequired,
 };
 
 Page.defaultProps = {
