@@ -1,10 +1,12 @@
-const Footer = () => (
+import PropTypes from 'prop-types';
+
+const Footer = ({ date }) => (
   <footer className="container">
     <p>
       <small>
         &copy;
         {' '}
-        {new Date().getFullYear()}
+        {date.getFullYear()}
         {' '}
         Simon Sinclair.
       </small>
@@ -17,5 +19,9 @@ const Footer = () => (
     </style>
   </footer>
 );
+
+Footer.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+};
 
 export default Footer;

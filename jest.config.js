@@ -1,5 +1,11 @@
 module.exports = {
-  setupFiles: ['<rootDir>/jest.setup.js'],
+  verbose: true,
+
+  setupFilesAfterEnv: [
+    // Ensure 'cleanup' is called after each test.
+    // https://testing-library.com/docs/react-testing-library/api#cleanup
+    '@testing-library/react/cleanup-after-each',
+  ],
 
   testPathIgnorePatterns: [
     '<rootDir>/.firebase/',
