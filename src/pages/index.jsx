@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 import { hexToString, getGreetingFromDate } from '../lib/utils';
 import Page from '../components/Page';
@@ -26,19 +25,19 @@ class Index extends React.Component {
     return (
       <Page
         title="Simon Sinclair &mdash; Home"
-        description="Simon Sinclair is a Front-end Developer living in London, UK."
+        description="Simon Sinclair is a Front-End Software Engineer living in London, UK."
       >
         <main className="container">
           <h1 className="greeting">
             {greeting}
             .
           </h1>
-          <p className="introduction">I&apos;m Simon &mdash; a Front&ndash;end Developer working for the BBC in London, UK.</p>
+          <p className="introduction">I&apos;m Simon &mdash; a Front&ndash;End Software Engineer from the UK working for the BBC in London.</p>
 
           { email && (
             <div>
               <h2>Contact</h2>
-              <Link href={`mailto:${email}`}><a>{email}</a></Link>
+              <a href={`mailto:${email}`}>{email}</a>
             </div>
           )}
 
@@ -46,15 +45,13 @@ class Index extends React.Component {
             <h2 className="elsewhere">Elsewhere</h2>
             <ul className="nav-list nav-list--inline">
               <li>
-                <Link href="https://github.com/simonsinclair"><a>GitHub</a></Link>
+                <a href="https://github.com/simonsinclair">GitHub</a>
               </li>
               <li>
-                <Link href="https://www.linkedin.com/in/thatsbyme/"><a>LinkedIn</a></Link>
+                <a href="https://www.linkedin.com/in/thatsbyme/">LinkedIn</a>
               </li>
               <li>
-                and
-                {' '}
-                <Link href="https://www.instagram.com/simon.sinclair/"><a>Instagram</a></Link>
+                <a href="https://www.instagram.com/simon.sinclair/">Instagram</a>
               </li>
             </ul>
           </div>
