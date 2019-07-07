@@ -13,7 +13,7 @@ const Page = ({ title, description, children }) => (
     </Head>
     <Masthead />
     {children}
-    <Footer today={new Date()} />
+    <Footer date={new Date()} />
 
     <style jsx global>
       {`
