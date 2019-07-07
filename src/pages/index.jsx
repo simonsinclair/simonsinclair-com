@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 import { hexToString, getGreetingFromDate } from '../lib/utils';
@@ -25,14 +26,20 @@ class Index extends React.Component {
     return (
       <Page
         title="Simon Sinclair &mdash; Home"
-        description="Simon Sinclair is a Front-End Software Engineer living in London, UK."
+        description="Simon Sinclair is a Software Engineer from the United Kingdom."
       >
         <main className="container">
           <h1 className="greeting">
             {greeting}
             .
           </h1>
-          <p className="introduction">I&apos;m Simon &mdash; a Front&ndash;End Software Engineer from the UK working for the BBC in London.</p>
+          <p className="introduction">
+            I&apos;m Simon &mdash; a Software Engineer from the United Kingdom. I currently work for the
+            {' '}
+            <abbr title="British Broadcasting Corporation">BBC</abbr>
+            {' '}
+            in London.
+          </p>
 
           { email && (
             <div>
