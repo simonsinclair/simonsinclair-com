@@ -1,17 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { hexToString, getGreetingFromDate } from '../lib/utils';
 import Page from '../components/Page';
 
 class Index extends React.Component {
-  static hexToString(hex) {
-    let string = '';
-    for (let i = 0; i < hex.length; i += 2) {
-      string += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-    }
-    return string;
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -21,20 +14,9 @@ class Index extends React.Component {
   }
 
   componentDidMount() {
-    let greeting = '';
-    const currentHour = new Date().getHours();
-
-    if (currentHour < 12) {
-      greeting = 'Good morning';
-    } else if (currentHour < 15) {
-      greeting = 'Good afternoon';
-    } else {
-      greeting = 'Good evening';
-    }
-
     this.setState({
-      greeting,
-      email: Index.hexToString('73696d6f6e4073696d6f6e73696e636c6169722e636f6d'),
+      greeting: getGreetingFromDate(new Date()),
+      email: hexToString('73696d6f6e4073696d6f6e73696e636c6169722e636f6d'),
     });
   }
 
