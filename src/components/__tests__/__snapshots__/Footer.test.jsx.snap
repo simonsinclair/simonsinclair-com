@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Footer /> Should match Snapshot 1`] = `
+exports[`<Footer /> is a component that matches its snapshot 1`] = `
 <DocumentFragment>
   <footer
-    class="jsx-1920088712 container"
+    class="jsx-35825920 container"
   >
     <p
-      class="jsx-1920088712"
+      class="jsx-35825920"
     >
       <small
-        class="jsx-1920088712"
+        class="jsx-35825920"
       >
         © 1988 Simon Sinclair.
       </small>
