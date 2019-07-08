@@ -10,24 +10,11 @@ const Masthead = () => (
     <style jsx>
       {`
         header {
+          align-items: center;
           display: flex;
           justify-content: space-between;
-          align-items: center;
+          padding-top: 1.5rem;
         }
-
-        .logo {
-          background-color: #111;
-          display: block;
-          line-height: 1;
-          padding: 0.75rem 1rem;
-        }
-         .logo a {
-           color: #FFF;
-           -webkit-font-smoothing: antialiased;
-           -moz-osx-font-smoothing: grayscale;
-         }
-
-        .nav-bar {}
       `}
     </style>
   </header>

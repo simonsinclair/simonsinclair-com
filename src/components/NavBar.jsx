@@ -18,9 +18,7 @@ const Nav = ({ router }) => {
       <style jsx>
         {`
           .nav-bar {}
-          .active {
-            border-bottom: 2px solid;
-          }
+          .active {}
         `}
       </style>
     </nav>

@@ -42,13 +42,13 @@ class Index extends React.Component {
           </p>
 
           { email && (
-            <div>
+            <div className="section">
               <h2>Contact</h2>
               <a href={`mailto:${email}`}>{email}</a>
             </div>
           )}
 
-          <div>
+          <div className="section">
             <h2 className="elsewhere">Elsewhere</h2>
             <ul className="nav-list nav-list--inline">
               <li>
@@ -67,7 +67,10 @@ class Index extends React.Component {
         <style jsx>
           {`
             .greeting {}
-            .introduction {}
+            .introduction {
+              font-size: 2.6111111rem;
+              line-height: 3rem;
+            }
           `}
         </style>
       </Page>

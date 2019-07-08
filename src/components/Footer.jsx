@@ -14,7 +14,9 @@ const Footer = ({ date }) => (
 
     <style jsx>
       {`
-        footer {}
+        footer {
+          margin-top: 3rem;
+        }
       `}
     </style>
   </footer>
