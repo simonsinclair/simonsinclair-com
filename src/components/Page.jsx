@@ -6,7 +6,7 @@ import Masthead from './Masthead';
 import Footer from './Footer';
 
 const Page = ({ title, description, children }) => (
-  <div>
+  <div className="page">
     <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -41,9 +41,40 @@ const Page = ({ title, description, children }) => (
         body {
           color: #222;
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-          margin: 0;
           font-size: 1rem;
           line-height: 1.5rem;
+          margin: 0;
+        }
+
+        @supports (display: grid) {
+          html,
+          body,
+          #__next {
+            height: 100%;
+          }
+
+          .page {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            min-height: 100%;
+          }
+
+          .page > header {
+            grid-row-start: 1;
+            grid-row-end: 2;
+            width: 100%;
+          }
+
+          .page > main {
+            grid-row-start: 2;
+            grid-row-end: 3;
+          }
+
+          .page > footer {
+            grid-row-start: 3;
+            grid-row-end: 4;
+            width: 100%;
+          }
         }
 
         h1 {
