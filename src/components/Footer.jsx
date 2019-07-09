@@ -16,6 +16,7 @@ const Footer = ({ date }) => (
       {`
         footer {
           margin-top: 3rem;
+          padding-bottom: 1.5rem;
         }
       `}
     </style>
