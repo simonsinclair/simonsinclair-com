@@ -59,10 +59,15 @@ const Page = ({ title, description, children }) => (
             min-height: 100%;
           }
 
+          .page > header,
+          .page > main,
+          .page > footer {
+            width: 100%;
+          }
+
           .page > header {
             grid-row-start: 1;
             grid-row-end: 2;
-            width: 100%;
           }
 
           .page > main {
@@ -73,7 +78,6 @@ const Page = ({ title, description, children }) => (
           .page > footer {
             grid-row-start: 3;
             grid-row-end: 4;
-            width: 100%;
           }
         }
 
