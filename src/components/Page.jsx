@@ -6,7 +6,7 @@ import Masthead from './Masthead';
 import Footer from './Footer';
 
 const COLOURS = {
-  brand: '#07F',
+  brand: '#0071F0',
 };
 
 const Page = ({ title, description, children }) => (
