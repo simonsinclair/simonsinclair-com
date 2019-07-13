@@ -1,19 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Footer /> is a component that matches its snapshot 1`] = `
-<DocumentFragment>
+exports[`<Footer /> is a component that renders and matches its snapshot 1`] = `
+<div>
   <footer
-    class="jsx-35825920 container"
+    class="jsx-2302073797 container"
   >
     <p
-      class="jsx-35825920"
+      class="jsx-2302073797"
     >
       <small
-        class="jsx-35825920"
+        class="jsx-2302073797"
       >
-        © 1988 Simon Sinclair.
+        ©
+         
+        1988
+         
+        Simon Sinclair.
       </small>
     </p>
   </footer>
-</DocumentFragment>
+</div>
 `;
