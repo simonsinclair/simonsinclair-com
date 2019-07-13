@@ -8,14 +8,12 @@ export const hexToString = (hex) => {
 
 export const getGreetingFromDate = (date) => {
   const currentHour = date.getHours();
-  let greeting = 'Hello';
+  let greeting = 'Good evening';
 
   if (currentHour < 12) {
     greeting = 'Good morning';
   } else if (currentHour < 15) {
     greeting = 'Good afternoon';
-  } else {
-    greeting = 'Good evening';
   }
 
   return greeting;
