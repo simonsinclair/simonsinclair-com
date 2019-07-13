@@ -5,6 +5,10 @@ import Head from './Head';
 import Masthead from './Masthead';
 import Footer from './Footer';
 
+const COLOURS = {
+  brand: '#07F',
+};
+
 const Page = ({ title, description, children }) => (
   <div className="page">
     <Head>
@@ -102,6 +106,7 @@ const Page = ({ title, description, children }) => (
         }
 
         a {
+          color: ${COLOURS.brand};
           text-decoration: none;
         }
 
