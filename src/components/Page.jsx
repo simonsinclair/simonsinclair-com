@@ -146,7 +146,7 @@ const Page = ({ title, description, children }) => (
 );
 
 Page.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   description: PropTypes.string,
 
   // Anything that can be rendered: numbers, strings, elements
@@ -155,7 +155,6 @@ Page.propTypes = {
 };
 
 Page.defaultProps = {
-  title: '',
   description: '',
 };
 
