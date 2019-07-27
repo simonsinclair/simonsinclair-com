@@ -19,7 +19,7 @@ let nextConfig = {
     // ==========
 
     // Copy files that aren't processed by Next JS to the export dir.
-    const filenames = ['robots.txt', 'sitemap.xml'];
+    const filenames = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
     const queue = filenames.map(filename => copyFile(join(dir, filename), join(outDir, filename)));
     await Promise.all(queue);
 
