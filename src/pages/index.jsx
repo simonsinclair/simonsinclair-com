@@ -21,7 +21,7 @@ class Index extends React.Component {
   }
 
   render() {
-    const { email, greeting } = this.state;
+    const { greeting, email } = this.state;
 
     return (
       <Page
