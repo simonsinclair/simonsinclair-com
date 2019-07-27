@@ -8,8 +8,8 @@ describe('<Footer /> is a component that', () => {
     expect(container).toMatchSnapshot();
   });
 
-  it('renders the correct copyright notice', () => {
-    const { getByText } = render(<Footer date={new Date(88, 0, 15)} />);
-    expect(getByText('© 1988 Simon Sinclair.')).not.toBeNull();
+  it('renders the given copyright year', () => {
+    const { queryByText } = render(<Footer date={new Date(88, 0, 15)} />);
+    expect(queryByText(/1988/i)).not.toBeNull();
   });
 });
