@@ -1,5 +1,3 @@
-/* eslint-env jest */
-
 import { render } from '@testing-library/react';
 
 import Footer from '../Footer';

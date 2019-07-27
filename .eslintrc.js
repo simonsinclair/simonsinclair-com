@@ -3,6 +3,7 @@ module.exports = {
   extends: 'airbnb',
   env: {
     browser: true,
+    jest: true,
   },
   rules: {
     // In a Next JS project, React
