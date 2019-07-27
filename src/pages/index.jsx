@@ -9,7 +9,7 @@ class Index extends React.Component {
     super(props);
     this.state = {
       greeting: 'Hello',
-      email: null,
+      email: '',
     };
   }
 
