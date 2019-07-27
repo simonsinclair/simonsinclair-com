@@ -12,7 +12,7 @@ export const getGreetingFromDate = (date) => {
 
   if (currentHour < 12) {
     greeting = 'Good morning';
-  } else if (currentHour < 15) {
+  } else if (currentHour < 17) {
     greeting = 'Good afternoon';
   }
 
