@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Footer from '../Footer';
+import Footer from './Footer';
 
 describe('<Footer /> is a component that', () => {
   it('renders and matches its snapshot', () => {
