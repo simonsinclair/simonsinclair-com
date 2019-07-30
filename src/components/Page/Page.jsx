@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import normalizeCss from 'normalize.css';
 
-import Head from './Head';
-import Masthead from './Masthead';
-import Footer from './Footer';
+import Head from '../Head/Head';
+import Masthead from '../Masthead/Masthead';
+import Footer from '../Footer/Footer';
 
 const COLOURS = {
   brand: '#0071F0',

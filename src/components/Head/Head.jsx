@@ -10,7 +10,7 @@ const Head = ({ children }) => (
 );
 
 Head.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Head;

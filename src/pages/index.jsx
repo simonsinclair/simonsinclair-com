@@ -2,7 +2,7 @@
 import React from 'react';
 
 import { hexToString, getGreetingFromDate } from '../lib/utils';
-import Page from '../components/Page';
+import Page from '../components/Page/Page';
 
 class Index extends React.Component {
   constructor(props) {

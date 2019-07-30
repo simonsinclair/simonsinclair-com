@@ -1,10 +1,15 @@
 import Link from 'next/link';
 
-import NavBar from './NavBar';
+import NavBar from '../NavBar/NavBar';
 
 const Masthead = () => (
   <header className="container">
-    <strong className="logo"><Link href="/"><a>Simon Sinclair</a></Link></strong>
+    <strong className="logo">
+      <Link href="/">
+        <a>Simon Sinclair</a>
+      </Link>
+    </strong>
+
     <NavBar />
 
     <style jsx>
