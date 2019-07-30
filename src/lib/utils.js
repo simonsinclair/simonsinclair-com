@@ -1,4 +1,4 @@
-export const hexToString = (hex) => {
+export const decodeHexString = (hex) => {
   let string = '';
   for (let i = 0; i < hex.length; i += 2) {
     string += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
@@ -6,7 +6,7 @@ export const hexToString = (hex) => {
   return string;
 };
 
-export const getGreetingFromDate = (date) => {
+export const getSalutationFromDate = (date) => {
   const currentHour = date.getHours();
   let greeting = 'Good evening';
 
@@ -19,4 +19,4 @@ export const getGreetingFromDate = (date) => {
   return greeting;
 };
 
-export default { hexToString, getGreetingFromDate };
+export default { decodeHexString, getSalutationFromDate };

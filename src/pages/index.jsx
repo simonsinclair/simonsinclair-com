@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import { hexToString, getGreetingFromDate } from '../lib/utils';
+import { decodeHexString, getSalutationFromDate } from '../lib/utils';
 import Page from '../components/Page/Page';
 
 class Index extends React.Component {
@@ -15,8 +15,8 @@ class Index extends React.Component {
 
   componentDidMount() {
     this.setState({
-      greeting: getGreetingFromDate(new Date()),
-      email: hexToString('73696d6f6e4073696d6f6e73696e636c6169722e636f6d'),
+      greeting: getSalutationFromDate(new Date()),
+      email: decodeHexString('73696d6f6e4073696d6f6e73696e636c6169722e636f6d'),
     });
   }
 
