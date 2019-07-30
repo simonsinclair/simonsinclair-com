@@ -25,3 +25,5 @@ export const event = ({
     console.error('gtag.event error', err);
   }
 };
+
+export default { GA_TRACKING_ID, pageview, event };
