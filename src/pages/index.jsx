@@ -1,27 +1,25 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-import { decodeHexString, getSalutationFromDate } from '../lib/utils';
+import { decodeHexString } from '../lib/utils';
 import Page from '../components/Page/Page';
 
 class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      greeting: 'Hello',
       email: '',
     };
   }
 
   componentDidMount() {
     this.setState({
-      greeting: getSalutationFromDate(new Date()),
       email: decodeHexString('73696d6f6e4073696d6f6e73696e636c6169722e636f6d'),
     });
   }
 
   render() {
-    const { greeting, email } = this.state;
+    const { email } = this.state;
 
     return (
       <Page
@@ -29,10 +27,7 @@ class Index extends React.Component {
         description="Simon Sinclair is a Software Engineer from the United Kingdom."
       >
         <main className="container">
-          <h1 className="greeting">
-            {greeting}
-            .
-          </h1>
+          <h1 className="greeting">Hello, World.</h1>
           <p className="introduction">
             I&apos;m Simon &mdash; a Software Engineer from the United Kingdom. I currently work for the
             {' '}
