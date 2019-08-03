@@ -106,6 +106,7 @@ const Page = ({ title, description, children }) => (
         }
 
         a {
+          font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
           color: ${COLOURS.brand};
           text-decoration: none;
         }
