@@ -88,7 +88,11 @@ const Page = ({ title, description, children }) => (
           }
         }
 
-        h1 {
+        h1,
+        h2 {
+          letter-spacing: -0.020em;
+        }
+
         h1,
         .alpha {
           font-size: 4.2222222rem;
