@@ -28,7 +28,7 @@ class Index extends React.Component {
       >
         <main className="container">
           <h1 className="greeting">Hello, World.</h1>
-          <p className="introduction">
+          <p className="introduction beta">
             I&apos;m Simon &mdash; a Software Engineer from the United Kingdom. I currently work for the
             {' '}
             <abbr title="British Broadcasting Corporation">BBC</abbr>
@@ -62,10 +62,7 @@ class Index extends React.Component {
         <style jsx>
           {`
             .greeting {}
-            .introduction {
-              font-size: 2.6111111rem;
-              line-height: 3rem;
-            }
+            .introduction {}
           `}
         </style>
       </Page>

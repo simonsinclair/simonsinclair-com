@@ -86,13 +86,16 @@ const Page = ({ title, description, children }) => (
         }
 
         h1 {
+        h1,
+        .alpha {
           font-size: 4.2222222rem;
           line-height: 4.5rem;
           margin-top: 1.5rem;
           margin-bottom: 3rem;
         }
 
-        h2 {
+        h2,
+        .beta {
           font-size: 2.6111111rem;
           line-height: 3rem;
           margin-top: 1.5rem;
