@@ -12,11 +12,13 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   distDir: '../build',
 
-  exportPathMap: async (defaultPathMap, { dir, outDir }) => {
-    // Copy files that aren't processed by Next to `outDir`.
-    const files = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
-    const copyQueue = files.map(file => copyFile(join(dir, file), join(outDir, file)));
-    await Promise.all(copyQueue);
+  exportPathMap: async (defaultPathMap, { dev, dir, outDir }) => {
+    if (!dev) {
+      // Copy files that aren't processed by Next to `outDir`.
+      const files = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
+      const copyQueue = files.map(file => copyFile(join(dir, file), join(outDir, file)));
+      await Promise.all(copyQueue);
+    }
 
     return defaultPathMap;
   },
