@@ -26,7 +26,9 @@ const Nav = ({ router }) => {
 };
 
 Nav.propTypes = {
-  router: PropTypes.shape({}).isRequired,
+  router: PropTypes.shape({
+    route: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default withRouter(Nav);
