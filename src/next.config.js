@@ -1,27 +1,10 @@
-const fs = require('fs');
-const { join } = require('path');
-const { promisify } = require('util');
-
-const copyFile = promisify(fs.copyFile);
-
 let nextConfig = {
   distDir: '../build',
 
-  // https://nextjs.org/docs#copying-custom-files
-  async exportPathMap(defaultPathMap, {
-    dev, dir, outDir,
-  }) {
+  exportPathMap(defaultPathMap, { dev }) {
     if (dev) {
       return defaultPathMap;
     }
-
-    // Production
-    // ==========
-
-    // Copy files that aren't processed by Next JS to the export dir.
-    const filenames = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
-    const queue = filenames.map(filename => copyFile(join(dir, filename), join(outDir, filename)));
-    await Promise.all(queue);
 
     return {
       '/': { page: '/' },
