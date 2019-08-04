@@ -1,4 +1,9 @@
-let nextConfig = {
+// eslint-disable-next-line import/no-extraneous-dependencies
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const nextConfig = {
   distDir: '../build',
 
   exportPathMap(defaultPathMap, { dev }) {
@@ -52,24 +57,4 @@ let nextConfig = {
   },
 };
 
-if (process.env.BUNDLE_ANALYZE) {
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
-  nextConfig = withBundleAnalyzer({
-    analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
-    analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
-    bundleAnalyzerConfig: {
-      server: {
-        analyzerMode: 'static',
-        reportFilename: '../bundles/server.html',
-      },
-      browser: {
-        analyzerMode: 'static',
-        reportFilename: '../bundles/client.html',
-      },
-    },
-    ...nextConfig,
-  });
-}
-
-module.exports = nextConfig;
+module.exports = withBundleAnalyzer(nextConfig);
