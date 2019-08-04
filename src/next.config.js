@@ -6,20 +6,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = {
   distDir: '../build',
 
-  exportPathMap(defaultPathMap, { dev }) {
-    if (dev) {
-      return defaultPathMap;
-    }
-
-    return {
-      '/': { page: '/' },
-
-      // Our static 404's named '_error', because we don't need or want
-      // Next JS to export its dynamic one, which it does by default.
-      '/404.html': { page: '/_error' },
-    };
-  },
-
   // Consume styles from regular CSS files.
   // - https://github.com/zeit/styled-jsx#styles-in-regular-css-files
   webpack: (webpackConfig, { isServer, defaultLoaders }) => {
