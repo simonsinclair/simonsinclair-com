@@ -1,3 +1,9 @@
+const fs = require('fs');
+const { join } = require('path');
+const { promisify } = require('util');
+
+const copyFile = promisify(fs.copyFile);
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -5,6 +11,15 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   distDir: '../build',
+
+  exportPathMap: async (defaultPathMap, { dir, outDir }) => {
+    // Copy files that aren't processed by Next to `outDir`.
+    const files = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
+    const copyQueue = files.map(file => copyFile(join(dir, file), join(outDir, file)));
+    await Promise.all(copyQueue);
+
+    return defaultPathMap;
+  },
 
   // Consume styles from regular CSS files.
   // - https://github.com/zeit/styled-jsx#styles-in-regular-css-files
