@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import normalizeCss from 'normalize.css';
 
+import fontsCss from '../../fonts.css';
 import Head from '../Head/Head';
 import Masthead from '../Masthead/Masthead';
 import Footer from '../Footer/Footer';
@@ -22,6 +23,7 @@ const Page = ({ title, description, children }) => (
     <style jsx global>
       {`
         ${normalizeCss}
+        ${fontsCss}
 
         html {
           box-sizing: border-box;
@@ -44,7 +46,8 @@ const Page = ({ title, description, children }) => (
 
         body {
           color: #222;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+          // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+          font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
           font-size: 1rem;
           line-height: 1.5rem;
           margin: 0;
@@ -109,7 +112,7 @@ const Page = ({ title, description, children }) => (
         }
 
         a {
-          font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+          font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
           color: ${COLOURS.brand};
           text-decoration: none;
         }
