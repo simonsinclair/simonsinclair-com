@@ -1,16 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Footer /> is a component that renders and matches its snapshot 1`] = `
+.c0 {
+  margin-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
 <div>
   <footer
-    class="jsx-2302073797 container"
+    class="container c0"
   >
-    <p
-      class="jsx-2302073797"
-    >
-      <small
-        class="jsx-2302073797"
-      >
+    <p>
+      <small>
         ©
          
         1988

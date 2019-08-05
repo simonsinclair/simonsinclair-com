@@ -1,9 +1,22 @@
 import Link from 'next/link';
+import styled from 'styled-components';
 
 import NavBar from '../NavBar/NavBar';
 
+const Header = styled.header`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+
+  .logo {
+    font-style: normal;
+    font-weight: 700;
+  }
+`;
+
 const Masthead = () => (
-  <header className="container">
+  <Header className="container">
     <strong className="logo">
       <Link href="/">
         <a>Simon Sinclair</a>
@@ -11,18 +24,7 @@ const Masthead = () => (
     </strong>
 
     <NavBar />
-
-    <style jsx>
-      {`
-        header {
-          align-items: center;
-          display: flex;
-          justify-content: space-between;
-          padding-top: 1.5rem;
-        }
-      `}
-    </style>
-  </header>
+  </Header>
 );
 
 export default Masthead;

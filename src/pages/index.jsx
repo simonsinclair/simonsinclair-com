@@ -58,13 +58,6 @@ class Index extends React.Component {
             </ul>
           </div>
         </main>
-
-        <style jsx>
-          {`
-            .greeting {}
-            .introduction {}
-          `}
-        </style>
       </Page>
     );
   }

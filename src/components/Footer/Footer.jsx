@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer`
+  margin-top: 3rem;
+  padding-bottom: 1.5rem;
+`;
 
 const Footer = ({ date }) => (
-  <footer className="container">
+  <StyledFooter className="container">
     <p>
       <small>
         &copy;
@@ -11,16 +17,7 @@ const Footer = ({ date }) => (
         Simon Sinclair.
       </small>
     </p>
-
-    <style jsx>
-      {`
-        footer {
-          margin-top: 3rem;
-          padding-bottom: 1.5rem;
-        }
-      `}
-    </style>
-  </footer>
+  </StyledFooter>
 );
 
 Footer.propTypes = {

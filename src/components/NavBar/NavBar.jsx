@@ -14,13 +14,6 @@ const Nav = ({ router }) => {
           </Link>
         </li>
       </ul>
-
-      <style jsx>
-        {`
-          .nav-bar {}
-          .active {}
-        `}
-      </style>
     </nav>
   );
 };
