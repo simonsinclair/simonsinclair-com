@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
-import fontsCss from '../../fonts.css';
 import Head from '../Head/Head';
 import Masthead from '../Masthead/Masthead';
 import Footer from '../Footer/Footer';
