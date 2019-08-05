@@ -5,6 +5,7 @@ module.exports = {
     // Ensure 'cleanup' is called after each test.
     // https://testing-library.com/docs/react-testing-library/api#cleanup
     '@testing-library/react/cleanup-after-each',
+    'jest-styled-components',
   ],
 
   testPathIgnorePatterns: [

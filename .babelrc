@@ -7,4 +7,5 @@
   // - plugin-transform-runtime
   // - styled-jsx
   "presets": ["next/babel"],
+  "plugins": ["babel-plugin-styled-components"]
 }
