@@ -27,7 +27,7 @@ class Index extends React.Component {
         description="Simon Sinclair is a Software Engineer from the United Kingdom."
       >
         <main className="container">
-          <h1 className="greeting">Hello, World.</h1>
+          <h1 className="greeting">Hello.</h1>
           <p className="introduction beta">
             I&apos;m Simon &mdash; a Software Engineer from the United Kingdom. I currently work for the
             {' '}
