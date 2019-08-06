@@ -11,11 +11,48 @@ const COLOURS = {
   brand: '#0071F0',
 };
 
-// font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-//              Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-
 const GlobalStyle = createGlobalStyle`
   ${normalize}
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('IBM Plex Sans'),
+      local('IBMPlexSans'),
+      url('/static/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2') format('woff2');
+      unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('IBM Plex Sans Bold'),
+      local('IBMPlexSans-Bold'),
+      url('/static/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Bold-Latin1.woff2') format('woff2');
+      unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 400;
+    src: local('IBM Plex Mono'),
+      local('IBMPlexMono'),
+      url('/static/IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Regular-Latin1.woff2') format('woff2');
+      unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: local('IBM Plex Mono Bold'),
+      local('IBMPlexMono-Bold'),
+      url('/static/IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Bold-Latin1.woff2') format('woff2');
+      unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00A3, U+00A4-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02;
+  }
 
   html {
     box-sizing: border-box;
@@ -39,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     color: #222;
     font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 0;
@@ -111,6 +149,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     font-family: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
+    // font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
     color: ${COLOURS.brand};
     text-decoration: none;
   }
