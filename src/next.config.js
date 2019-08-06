@@ -23,23 +23,7 @@ const nextConfig = {
     return defaultPathMap;
   },
 
-  // Consume styles from regular CSS files.
-  // - https://github.com/zeit/styled-jsx#styles-in-regular-css-files
-  webpack: (webpackConfig, { isServer, defaultLoaders }) => {
-    webpackConfig.module.rules.push({
-      test: /\.css$/,
-      use: [
-        defaultLoaders.babel,
-        {
-          // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-          loader: require('styled-jsx/webpack').loader,
-          options: {
-            type: 'scoped',
-          },
-        },
-      ],
-    });
-
+  webpack: (webpackConfig, { isServer }) => {
     // 'eslint-loader'
     // Reference: https://github.com/sayuti-daniel/next-eslint/blob/master/index.js
     if (!isServer) {
