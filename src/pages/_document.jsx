@@ -34,6 +34,7 @@ class CustomDocument extends Document {
     return (
       <Html lang="en-GB">
         <Head>
+          <link rel="preload" as="font" crossOrigin="crossorigin" type="font/woff2" href="/static/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2" />
           <link rel="preconnect" href="https://www.google-analytics.com" />
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
           <script dangerouslySetInnerHTML={
