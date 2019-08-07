@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NavBar /> is a component that renders and matches its snapshot 1`] = `
+<div>
+  <nav
+    class="nav-bar"
+  >
+    <ul
+      class="nav-list nav-list--inline"
+    >
+      <li>
+        <a
+          class=""
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
