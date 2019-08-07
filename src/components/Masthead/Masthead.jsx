@@ -22,7 +22,6 @@ const Masthead = () => (
         <a>Simon Sinclair</a>
       </Link>
     </strong>
-
     <NavBar />
   </Header>
 );
