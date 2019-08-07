@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
   ${normalize}
 
   @font-face {
+    font-display: swap;
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 400;
@@ -25,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-display: optional;
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 700;
@@ -35,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-display: optional;
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 400;
@@ -45,6 +48,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
+    font-display: optional;
     font-family: 'IBM Plex Mono';
     font-style: normal;
     font-weight: 700;
