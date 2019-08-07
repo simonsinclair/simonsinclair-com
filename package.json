@@ -11,7 +11,7 @@
     "build": "next build ./src",
     "preexport": "npm run clean && npm run build",
     "export": "next export ./src -o ./public",
-    "predeploy": "npm run clean && npm run export",
+    "predeploy": "npm run export",
     "deploy": "firebase deploy",
     "clean": "trash ./build ./public",
     "analyse": "ANALYZE=true npm run build"
