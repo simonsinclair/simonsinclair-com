@@ -1,5 +1,8 @@
+/* eslint-disable react/no-danger */
+
 import React from 'react';
 import App, { Container } from 'next/app';
+import Head from 'next/head';
 import Router from 'next/router';
 import { ThemeProvider } from 'styled-components';
 
@@ -22,6 +25,14 @@ class CustomApp extends App {
       <Container>
         <ThemeProvider theme={THEME}>
           <div className="page">
+            <Head>
+              <link rel="preload" as="font" crossOrigin="crossorigin" type="font/woff2" href="/static/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2" />
+              <link rel="preconnect" href="https://www.google-analytics.com" />
+              <script async src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`} />
+              <script dangerouslySetInnerHTML={
+                { __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","${gtag.GA_TRACKING_ID}");` }}
+              />
+            </Head>
             <GlobalStyle />
             <Masthead />
             <Component {...pageProps} />
