@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components';
 
 import * as gtag from '../lib/gtag';
 import GlobalStyle from '../components/GlobalStyle';
+import Masthead from '../components/Masthead/Masthead';
+import Footer from '../components/Footer/Footer';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
@@ -19,10 +21,12 @@ class CustomApp extends App {
     return (
       <Container>
         <ThemeProvider theme={THEME}>
-          <React.Fragment>
+          <div className="page">
             <GlobalStyle />
+            <Masthead />
             <Component {...pageProps} />
-          </React.Fragment>
+            <Footer />
+          </div>
         </ThemeProvider>
       </Container>
     );

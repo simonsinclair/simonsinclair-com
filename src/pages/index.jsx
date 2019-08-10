@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
+import Head from 'next/head';
 
 import { decodeHexString } from '../lib/utils';
-import Page from '../components/Page/Page';
 
 class Index extends React.Component {
   constructor(props) {
@@ -22,43 +22,42 @@ class Index extends React.Component {
     const { email } = this.state;
 
     return (
-      <Page
-        title="Simon Sinclair &mdash; Home"
-        description="Simon Sinclair is a Software Engineer from the United Kingdom."
-      >
-        <main className="container">
-          <h1 className="greeting">Hello.</h1>
-          <p className="introduction beta">
-            I&apos;m Simon &mdash; a Software Engineer from the United Kingdom. I currently work for the
-            {' '}
-            <abbr title="British Broadcasting Corporation">BBC</abbr>
-            {' '}
-            in London.
-          </p>
+      <main className="container">
+        <Head>
+          <title>Simon Sinclair &mdash; Home</title>
+          <meta name="description" content="Simon Sinclair is a Software Engineer from the United Kingdom." />
+        </Head>
+        <h1 className="greeting">Hello.</h1>
+        <p className="introduction beta">
+          I&apos;m Simon &mdash; a Software Engineer from the United Kingdom. I currently work for the
+          {' '}
+          <abbr title="British Broadcasting Corporation">BBC</abbr>
+          {' '}
+          in London.
+        </p>
 
-          { email && (
-            <div className="section">
-              <h2>Contact</h2>
-              <a href={`mailto:${email}`}>{email}</a>
-            </div>
-          )}
-
+        { email && (
           <div className="section">
-            <h2 className="elsewhere">Elsewhere</h2>
-            <ul className="nav-list nav-list--inline">
-              <li>
-                <a href="https://github.com/simonsinclair">GitHub</a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/thatsbyme/">LinkedIn</a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/simon.sinclair/">Instagram</a>
-              </li>
-            </ul>
+            <h2>Contact</h2>
+            <a href={`mailto:${email}`}>{email}</a>
           </div>
-        </main>
-      </Page>
+        )}
+
+        <div className="section">
+          <h2 className="elsewhere">Elsewhere</h2>
+          <ul className="nav-list nav-list--inline">
+            <li>
+              <a href="https://github.com/simonsinclair">GitHub</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/thatsbyme/">LinkedIn</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/simon.sinclair/">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </main>
     );
   }
 }

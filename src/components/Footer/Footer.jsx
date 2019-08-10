@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledFooter = styled.footer`
@@ -6,13 +5,13 @@ const StyledFooter = styled.footer`
   padding-bottom: 1.5rem;
 `;
 
-const Footer = ({ date }) => (
+const Footer = () => (
   <StyledFooter className="container">
     <p>
       <small>
         &copy;
         {' '}
-        {date.getFullYear()}
+        {new Date().getFullYear()}
         {' '}
         Simon Sinclair.
       </small>
@@ -20,8 +19,5 @@ const Footer = ({ date }) => (
   </StyledFooter>
 );
 
-Footer.propTypes = {
-  date: PropTypes.instanceOf(Date).isRequired,
-};
 
 export default Footer;

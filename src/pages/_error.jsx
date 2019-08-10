@@ -1,13 +1,14 @@
-import React from 'react';
-import Page from '../components/Page/Page';
+import Head from 'next/head';
 
 const Error = () => (
-  <Page title="Simon Sinclair &mdash; Oops" description="The page you requested could not be found.">
-    <main className="container">
-      <h1>Oops</h1>
-      <p>The page you requested could not be found.</p>
-    </main>
-  </Page>
+  <main className="container">
+    <Head>
+      <title>Simon Sinclair &mdash; Oops</title>
+      <meta name="description" content="The page you are looking for could not be found." />
+    </Head>
+    <h1>Oops</h1>
+    <p>The page you are looking for could not be found.</p>
+  </main>
 );
 
 export default Error;
