@@ -1,13 +1,14 @@
+import React from 'react';
 import App, { Container } from 'next/app';
 import Router from 'next/router';
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
 import * as gtag from '../lib/gtag';
 
 Router.events.on('routeChangeComplete', url => gtag.pageview(url));
 
-const COLOURS = {
+const THEME = {
   brand: '#0071F0',
 };
 
@@ -154,7 +155,7 @@ const GlobalStyle = createGlobalStyle`
   a {
     font-family: "IBM Plex Mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
     // font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    color: ${COLOURS.brand};
+    color: ${THEME.brand};
     text-decoration: none;
   }
 
@@ -197,8 +198,12 @@ class CustomApp extends App {
 
     return (
       <Container>
-        <GlobalStyle />
-        <Component {...pageProps} />
+        <ThemeProvider theme={THEME}>
+          <React.Fragment>
+            <GlobalStyle />
+            <Component {...pageProps} />
+          </React.Fragment>
+        </ThemeProvider>
       </Container>
     );
   }
