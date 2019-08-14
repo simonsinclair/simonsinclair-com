@@ -17,8 +17,4 @@ module.exports = {
     // for things like 'normalize.css'.
     // '<rootDir>/node_modules/',
   ],
-
-  moduleNameMapper: {
-    '\\.(css)$': 'identity-obj-proxy',
-  },
 };
