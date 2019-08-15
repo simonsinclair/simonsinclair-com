@@ -1,10 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 const fs = require('fs');
-const { join } = require('path');
+const { join, parse } = require('path');
 const { promisify } = require('util');
 
 const copyFile = promisify(fs.copyFile);
 
-// eslint-disable-next-line import/no-extraneous-dependencies
+const { GenerateSW } = require('workbox-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -15,17 +18,18 @@ const nextConfig = {
   exportPathMap: async (defaultPathMap, { dev, dir, outDir }) => {
     if (!dev) {
       // Copy files that aren't processed by Next to `outDir`.
-      const files = ['favicon.ico', 'robots.txt', 'sitemap.xml'];
-      const copyQueue = files.map(file => copyFile(join(dir, file), join(outDir, file)));
+      const files = ['favicon.ico', 'robots.txt', 'sitemap.xml', '../build/service-worker.js'];
+      const copyQueue = files.map((file) => {
+        const { base } = parse(file);
+        return copyFile(join(dir, file), join(outDir, base));
+      });
       await Promise.all(copyQueue);
     }
 
     return defaultPathMap;
   },
 
-  webpack: (webpackConfig, { isServer }) => {
-    // 'eslint-loader'
-    // Reference: https://github.com/sayuti-daniel/next-eslint/blob/master/index.js
+  webpack: (webpackConfig, { dev, isServer }) => {
     if (!isServer) {
       webpackConfig.module.rules.push({
         enforce: 'pre', // https://github.com/webpack-contrib/eslint-loader#usage
@@ -38,6 +42,38 @@ const nextConfig = {
           },
         }],
       });
+    }
+
+    if (!isServer && !dev) {
+      webpackConfig.plugins.push(
+        new CopyPlugin([{
+          from: 'static',
+          to: 'temp-static',
+        }]),
+        new GenerateSW({
+          inlineWorkboxRuntime: true,
+          exclude: [
+            'react-loadable-manifest.json',
+            'build-manifest.json',
+          ],
+          modifyURLPrefix: {
+            'static/': '_next/static/',
+            'temp-static/': 'static/',
+          },
+          runtimeCaching: [
+            {
+              urlPattern: /^https?.*/,
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'offlineCache',
+                expiration: {
+                  maxEntries: 200,
+                },
+              },
+            },
+          ],
+        }),
+      );
     }
 
     return webpackConfig;
