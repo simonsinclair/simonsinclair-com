@@ -9,6 +9,7 @@ import { ThemeProvider } from 'styled-components';
 import * as gtag from '../lib/gtag';
 import GlobalStyle from '../components/GlobalStyle';
 import SecondPhaseFonts from '../components/SecondPhaseFonts/SecondPhaseFonts';
+import RegisterServiceWorker from '../components/RegisterServiceWorker/RegisterServiceWorker';
 import Masthead from '../components/Masthead/Masthead';
 import Footer from '../components/Footer/Footer';
 
@@ -35,6 +36,7 @@ class CustomApp extends App {
             </Head>
             <GlobalStyle />
             <SecondPhaseFonts />
+            <RegisterServiceWorker />
             <Masthead />
             <Component {...pageProps} />
             <Footer />
