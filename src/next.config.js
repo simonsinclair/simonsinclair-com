@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-const { GenerateSW } = require('workbox-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -25,36 +24,13 @@ const nextConfig = {
       });
     }
 
-    if (!isServer && !dev) {
+    if (!isServer) {
       webpackConfig.plugins.push(
         new CopyPlugin([{
           from: 'static',
           to: 'temp-static',
           ignore: ['**/.*'],
         }]),
-        new GenerateSW({
-          inlineWorkboxRuntime: true,
-          exclude: [
-            'react-loadable-manifest.json',
-            'build-manifest.json',
-          ],
-          modifyURLPrefix: {
-            'static/': '_next/static/',
-            'temp-static/': 'static/',
-          },
-          runtimeCaching: [
-            {
-              urlPattern: /^https?.*/,
-              handler: 'NetworkFirst',
-              options: {
-                cacheName: 'offlineCache',
-                expiration: {
-                  maxEntries: 200,
-                },
-              },
-            },
-          ],
-        }),
       );
     }
 

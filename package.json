@@ -47,7 +47,6 @@
     "jest": "^24.8.0",
     "jest-styled-components": "^6.3.3",
     "start-server-and-test": "^1.9.2",
-    "trash-cli": "^3.0.0",
-    "workbox-webpack-plugin": "^5.0.0-alpha.2"
+    "trash-cli": "^3.0.0"
   }
 }
