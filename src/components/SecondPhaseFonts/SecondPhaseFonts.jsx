@@ -26,6 +26,7 @@ class SecondPhaseFonts extends React.PureComponent {
       ]);
 
       fonts.forEach(font => document.fonts.add(font));
+      document.documentElement.classList.add('second-phase-fonts-loaded');
     }
   }
 
