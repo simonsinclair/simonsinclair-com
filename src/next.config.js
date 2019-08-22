@@ -1,11 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-const fs = require('fs');
-const { join, parse } = require('path');
-const { promisify } = require('util');
-
-const copyFile = promisify(fs.copyFile);
-
 const { GenerateSW } = require('workbox-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
@@ -13,23 +7,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
+  experimental: { publicDirectory: true },
   distDir: '../build',
 
-  exportPathMap: async (defaultPathMap, { dev, dir, outDir }) => {
-    if (!dev) {
-      // Copy files that aren't processed by Next to `outDir`.
-      const files = ['favicon.ico', 'robots.txt', 'sitemap.xml', '../build/service-worker.js'];
-      const copyQueue = files.map((file) => {
-        const { base } = parse(file);
-        return copyFile(join(dir, file), join(outDir, base));
-      });
-      await Promise.all(copyQueue);
-    }
-
-    return defaultPathMap;
-  },
-
-  webpack: (webpackConfig, { dev, isServer }) => {
+  webpack: (webpackConfig, { isServer }) => {
     if (!isServer) {
       webpackConfig.module.rules.push({
         enforce: 'pre', // https://github.com/webpack-contrib/eslint-loader#usage
