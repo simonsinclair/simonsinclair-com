@@ -30,6 +30,7 @@ const nextConfig = {
         new CopyPlugin([{
           from: 'static',
           to: 'temp-static',
+          ignore: ['**/.*'],
         }]),
         new GenerateSW({
           inlineWorkboxRuntime: true,
