@@ -1,0 +1,33 @@
+{% set css %}
+  {% include "Style/Style.css" %}
+  {% include "Masthead/Masthead.css" %}
+  {% include "Footer/Footer.css" %}
+{% endset %}
+
+{% set js %}
+  {% include "SecondPhaseFonts/SecondPhaseFonts.js" %}
+{% endset %}
+
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="preload" as="font" crossOrigin="crossorigin" type="font/woff2" href="/assets/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2">
+    <link rel="preload" as="font" crossOrigin="crossorigin" type="font/woff2" href="/assets/fonts/IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Regular-Latin1.woff2">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <style>{{ css | cssmin | safe }}</style>
+    <script>{{ js | jsmin | safe }}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.GA_ID }}"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","{{ site.GA_ID }}");</script>
+  </head>
+  <body>
+    <div class="page">
+      {% include "Masthead/Masthead.njk" %}
+      {{ content | safe }}
+      {% include "Footer/Footer.njk" %}
+    </div>
+  </body>
+</html>

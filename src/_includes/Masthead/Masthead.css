@@ -1,0 +1,11 @@
+.masthead {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+}
+
+.masthead__logo {
+  font-style: normal;
+  font-weight: 700;
+}
