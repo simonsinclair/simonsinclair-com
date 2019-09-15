@@ -1,9 +1,9 @@
 {
   "name": "simonsinclair-com",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "My website.",
   "repository": "github:simonsinclair/simonsinclair-com",
-  "main": "pages/index.js",
+  "main": "",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watch",
@@ -11,42 +11,21 @@
     "test:e2e:open": "start-server-and-test start http://localhost:3000 cypress:open",
     "cypress": "cypress run",
     "cypress:open": "cypress open",
-    "start": "next ./src",
-    "prebuild": "trash ./build",
-    "build": "next build ./src",
-    "preexport": "trash ./public && npm run build",
-    "export": "next export ./src -o ./public",
-    "predeploy": "npm run export",
-    "deploy": "firebase deploy",
-    "analyse": "ANALYZE=true npm run build"
+    "start": "eleventy --serve",
+    "prebuild": "trash public",
+    "build": "eleventy",
+    "deploy": "firebase deploy"
   },
   "author": "Simon Sinclair",
   "license": "UNLICENSED",
-  "dependencies": {
-    "next": "^9.0.3",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.3.2",
-    "styled-normalize": "^8.0.6"
-  },
   "devDependencies": {
-    "@next/bundle-analyzer": "^9.0.3",
-    "@testing-library/react": "^8.0.7",
-    "babel-eslint": "^10.0.2",
-    "babel-jest": "^24.8.0",
-    "babel-plugin-styled-components": "^1.10.6",
-    "copy-webpack-plugin": "^5.0.4",
+    "@11ty/eleventy": "^0.9.0",
+    "clean-css": "^4.2.1",
     "cypress": "^3.4.1",
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-loader": "^2.2.1",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.14.3",
     "jest": "^24.8.0",
-    "jest-styled-components": "^6.3.3",
     "start-server-and-test": "^1.9.2",
+    "terser": "^4.3.1",
     "trash-cli": "^3.0.0"
-  }
+  },
+  "dependencies": {}
 }
