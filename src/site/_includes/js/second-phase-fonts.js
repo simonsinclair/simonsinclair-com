@@ -19,8 +19,8 @@ if ('fonts' in document) {
   Promise.all([
     ibmPlex.sans.bold.load(),
     ibmPlex.mono.bold.load(),
-  ]).then(fonts => {
-    fonts.forEach(font => document.fonts.add(font));
+  ]).then((fonts) => {
+    fonts.forEach((font) => document.fonts.add(font));
     document.documentElement.classList.add('second-phase-fonts-loaded');
   });
 }
