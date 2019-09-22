@@ -1,4 +1,3 @@
-const CleanCSS = require('clean-css');
 const Terser = require('terser');
 
 module.exports = function(config) {
@@ -8,12 +7,6 @@ module.exports = function(config) {
   config.addPassthroughCopy('src/site/favicon.ico');
   config.addPassthroughCopy('src/site/robots.txt');
   config.addPassthroughCopy('src/site/sitemap.xml');
-
-  config.addFilter('cssmin', function(code) {
-    return new CleanCSS({})
-      .minify(code)
-      .styles;
-  });
 
   config.addFilter('jsmin', function(code) {
     const minified = Terser.minify(code);
