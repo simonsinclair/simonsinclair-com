@@ -4,10 +4,10 @@ const Terser = require('terser');
 module.exports = function(config) {
   config.addLayoutAlias('base', 'layout.njk');
 
-  config.addPassthroughCopy('src/assets');
-  config.addPassthroughCopy('src/favicon.ico');
-  config.addPassthroughCopy('src/robots.txt');
-  config.addPassthroughCopy('src/sitemap.xml');
+  config.addPassthroughCopy('src/site/assets');
+  config.addPassthroughCopy('src/site/favicon.ico');
+  config.addPassthroughCopy('src/site/robots.txt');
+  config.addPassthroughCopy('src/site/sitemap.xml');
 
   config.addFilter('cssmin', function(code) {
     return new CleanCSS({})
@@ -26,7 +26,7 @@ module.exports = function(config) {
 
   return {
     dir: {
-      input: 'src',
+      input: 'src/site',
       output: 'public',
     },
   };
