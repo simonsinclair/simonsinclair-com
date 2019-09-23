@@ -1,4 +1,4 @@
-describe('The Index Page', () => {
+describe('The Home Page', () => {
   it('successfully loads', () => {
     cy.visit('/');
   });
