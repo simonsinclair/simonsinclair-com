@@ -1,4 +1,4 @@
-export const decodeHexString = (hex) => {
+const decodeHexString = (hex) => {
   let string = '';
   for (let i = 0; i < hex.length; i += 2) {
     string += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
@@ -7,7 +7,7 @@ export const decodeHexString = (hex) => {
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-export const pageview = (url, GA_ID) => {
+const pageview = (url, GA_ID) => {
   try {
     window.gtag('config', GA_ID, {
       page_path: url,
@@ -18,7 +18,7 @@ export const pageview = (url, GA_ID) => {
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({
+const event = ({
   action, category, label, value,
 }) => {
   try {
@@ -32,4 +32,4 @@ export const event = ({
   }
 };
 
-export default { decodeHexString, pageview, event };
+module.exports = { decodeHexString, pageview, event };

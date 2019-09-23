@@ -1,4 +1,4 @@
-import { decodeHexString } from '../utils';
+const { decodeHexString } = require('../utils');
 
 describe('decodeHexString is a function that', () => {
   it('decodes a hexadecimal string', () => {
