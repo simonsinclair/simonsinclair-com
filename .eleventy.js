@@ -17,6 +17,13 @@ module.exports = function(config) {
     return minified.code;
   });
 
+  config.setBrowserSyncConfig({
+    ui: false,
+    ghostMode: false,
+    online: false,
+    open: 'local',
+  });
+
   return {
     dir: {
       input: 'src/site',
