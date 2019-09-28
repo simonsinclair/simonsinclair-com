@@ -3,6 +3,7 @@ const Terser = require('terser');
 
 module.exports = function(config) {
   config.addLayoutAlias('base', 'layout.njk');
+  config.addLayoutAlias('article', 'layouts/article.njk');
 
   config.addPassthroughCopy('src/site/assets');
   config.addPassthroughCopy('src/site/favicon.ico');
