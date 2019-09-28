@@ -28,7 +28,6 @@ module.exports = function(config) {
     ui: false,
     ghostMode: false,
     online: false,
-    open: 'local',
   });
 
   return {
