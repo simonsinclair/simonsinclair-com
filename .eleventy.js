@@ -2,7 +2,7 @@ const CleanCSS = require("clean-css");
 const Terser = require('terser');
 
 module.exports = function(config) {
-  config.addLayoutAlias('base', 'layout.njk');
+  config.addLayoutAlias('base', 'layouts/base.njk');
   config.addLayoutAlias('article', 'layouts/article.njk');
 
   config.addPassthroughCopy('src/site/assets');
