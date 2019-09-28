@@ -7,5 +7,6 @@ A static site built using Eleventy.
 /src
   /site - processed by Eleventy.
     /_includes - files included from a Nunjucks template.
-  /sass - files processed by SASS.
+  /assets - static assets, which are copied to /public/assets.
+  /lib - To do...
 ```
