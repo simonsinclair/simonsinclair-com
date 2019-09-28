@@ -10,7 +10,7 @@ module.exports = function(config) {
   config.addPassthroughCopy('src/site/sitemap.xml');
 
   config.addFilter('cssmin', function(code) {
-    return new CleanCSS({})
+    return new CleanCSS()
       .minify(code)
       .styles;
   });
