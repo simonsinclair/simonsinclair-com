@@ -18,7 +18,7 @@
     "prebuild": "trash public",
     "build": "npm run build:site",
     "build:site": "eleventy",
-    "deploy": "firebase deploy"
+    "deploy": "npm run build && npm run test && firebase deploy"
   },
   "author": "Simon Sinclair",
   "license": "UNLICENSED",
