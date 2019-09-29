@@ -11,13 +11,18 @@ module.exports = function(config) {
   config.addPassthroughCopy('src/site/sitemap.xml');
 
   config.addFilter('cssmin', function(code) {
-    return new CleanCSS()
-      .minify(code)
-      .styles;
+    const minified = new CleanCSS().minify(code);
+    if (minified.warnings.length >= 1) console.warn('CleanCSS warnings:', minified.warnings);
+    if (minified.errors >= 1) {
+      console.error('CleanCSS errors:', minified.errors);
+      return code;
+    }
+    return minified.styles;
   });
 
   config.addFilter('jsmin', function(code) {
-    const minified = Terser.minify(code);
+    const minified = Terser.minify(code, { warnings: 'verbose' });
+    if (minified.warnings) console.warn('Terser warnings:', minified.warnings);
     if (minified.error) {
       console.error('Terser error:', minified.error);
       return code;
