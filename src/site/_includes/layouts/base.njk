@@ -21,9 +21,9 @@
   </head>
   <body>
     <div class="page">
-      {% include "partials/masthead.njk" %}
-      {{ content | safe }}
-      {% include "partials/footer.njk" %}
+      {% include "partials/masthead.njk" -%}
+      {{ content | safe -}}
+      {% include "partials/footer.njk" -%}
     </div>
   </body>
 </html>
