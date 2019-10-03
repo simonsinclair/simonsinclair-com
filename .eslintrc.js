@@ -7,6 +7,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:cypress/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -16,6 +17,5 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  rules: {
-  },
+  rules: {},
 };
