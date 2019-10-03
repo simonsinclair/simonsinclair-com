@@ -13,11 +13,9 @@
     "test:e2e:open": "start-server-and-test start http://localhost:8080 cypress:open",
     "cypress": "cypress run",
     "cypress:open": "cypress open",
-    "start": "npm run eleventy:serve",
-    "eleventy:serve": "eleventy --serve",
+    "start": "eleventy --serve",
     "prebuild": "trash public",
-    "build": "npm run build:site",
-    "build:site": "eleventy",
+    "build": "eleventy",
     "deploy": "npm run build && npm run test && firebase deploy"
   },
   "author": "Simon Sinclair",
