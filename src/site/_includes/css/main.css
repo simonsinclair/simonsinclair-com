@@ -137,12 +137,19 @@ a {
   }
   .nav-list a {
     display: block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
 .nav-list--inline {
   display: flex;
   flex-wrap: wrap;
 }
+
+
+/* -------- */
+/* PARTIALS */
+/* -------- */
 
 .masthead {
   display: flex;
@@ -158,8 +165,9 @@ a {
   white-space: nowrap;
 }
 
-.nav-bar ul {
+.nav-bar > .nav-list--inline {
   justify-content: flex-end;
+  margin-top: 0.75rem;
 }
 
 .footer {
