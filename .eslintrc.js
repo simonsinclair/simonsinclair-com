@@ -1,21 +1,15 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-    node: true,
-    jest: true,
-  },
   extends: [
     'airbnb-base',
+    'plugin:prettier/recommended',
     'plugin:cypress/recommended',
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+  env: {
+    browser: true,
+    node: true,
+    // "Enable all ECMAScript 6 features except for modules (this
+    // automatically sets the ecmaVersion parser option to 6)."
+    es6: true,
+    jest: true,
   },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  rules: {},
 };
