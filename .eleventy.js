@@ -1,8 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlMinifier = require('html-minifier');
 const CleanCSS = require('clean-css');
 const Terser = require('terser');
 
-module.exports = (config) => {
+module.exports = config => {
   config.addLayoutAlias('base', 'layouts/base.njk');
   config.addLayoutAlias('article', 'layouts/article.njk');
 
@@ -14,9 +15,10 @@ module.exports = (config) => {
   // -------
   // FILTERS
   // -------
-  config.addFilter('cssmin', (code) => {
+  config.addFilter('cssmin', code => {
     const minified = new CleanCSS().minify(code);
-    if (minified.warnings.length >= 1) console.warn('CleanCSS warnings:', minified.warnings);
+    if (minified.warnings.length >= 1)
+      console.warn('CleanCSS warnings:', minified.warnings);
     if (minified.errors >= 1) {
       console.error('CleanCSS errors:', minified.errors);
       return code;
@@ -24,7 +26,7 @@ module.exports = (config) => {
     return minified.styles;
   });
 
-  config.addFilter('jsmin', (code) => {
+  config.addFilter('jsmin', code => {
     const minified = Terser.minify(code, { warnings: 'verbose' });
     if (minified.warnings) console.warn('Terser warnings:', minified.warnings);
     if (minified.error) {

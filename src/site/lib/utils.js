@@ -1,4 +1,4 @@
-const decodeHexString = (hex) => {
+const decodeHexString = hex => {
   let string = '';
   for (let i = 0; i < hex.length; i += 2) {
     string += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
@@ -18,9 +18,7 @@ const pageview = (url, GA_ID) => {
 };
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/events
-const event = ({
-  action, category, label, value,
-}) => {
+const event = ({ action, category, label, value }) => {
   try {
     window.gtag('event', action, {
       event_category: category,
