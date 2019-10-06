@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -24,5 +26,9 @@
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-// eslint-disable-next-line import/no-extraneous-dependencies
 require('cypress-axe');
+const {
+  addMatchImageSnapshotCommand,
+} = require('cypress-image-snapshot/command');
+
+addMatchImageSnapshotCommand();
