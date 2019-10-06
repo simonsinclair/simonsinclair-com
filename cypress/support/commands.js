@@ -23,3 +23,6 @@
 //
 // -- This is will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('cypress-axe');
