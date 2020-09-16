@@ -16,8 +16,8 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     <style>{{ css | cssmin | safe }}</style>
     <script>{{ js | jsmin | safe }}</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.GA_ID }}"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","{{ site.GA_ID }}");</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","{{ site.ga_id }}");</script>
   </head>
   <body>
     <div class="page">
