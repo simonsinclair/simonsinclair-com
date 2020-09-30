@@ -6,11 +6,11 @@ A static site built using Eleventy.
 ```
 /src
   /site - processed by Eleventy.
-    /_includes - files included from Nunjucks templates.
+    /_data - global data files.
+    /_includes - files included by Nunjucks templates.
       /css
       /js
       /layouts
       /partials
-    /articles - articles and index.
   /assets - static assets, which are copied to /public/assets.
 ```
