@@ -6,7 +6,7 @@
   "repository": "github:simonsinclair/simonsinclair-com",
   "main": "",
   "scripts": {
-    "test": "npm run test:unit && npm run test:e2e",
+    "test": "npm run test:e2e",
     "test:unit": "jest --coverage",
     "test:unit:watch": "jest --watch",
     "test:e2e": "start-server-and-test serve http://localhost:5000 cypress",

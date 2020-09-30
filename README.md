@@ -13,5 +13,4 @@ A static site built using Eleventy.
       /partials
     /articles - articles and index.
   /assets - static assets, which are copied to /public/assets.
-  /lib - To do.
 ```
