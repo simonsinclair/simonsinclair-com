@@ -12,5 +12,5 @@ A static site built using Eleventy.
       /js
       /layouts
       /partials
-  /assets - static assets, which are copied to /public/assets.
+    /assets - static assets, which are copied to /public/assets.
 ```
