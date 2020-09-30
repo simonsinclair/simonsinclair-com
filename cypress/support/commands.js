@@ -27,8 +27,3 @@
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
 require('cypress-axe');
-const {
-  addMatchImageSnapshotCommand,
-} = require('cypress-image-snapshot/command');
-
-addMatchImageSnapshotCommand();

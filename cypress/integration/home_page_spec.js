@@ -11,8 +11,4 @@ describe('The Home Page', () => {
   it('passes a11y tests', () => {
     cy.checkA11y();
   });
-
-  it('matches the image snapshot', () => {
-    cy.matchImageSnapshot();
-  });
 });
