@@ -2,8 +2,9 @@
 const HtmlMinifier = require('html-minifier');
 const CleanCSS = require('clean-css');
 const Terser = require('terser');
+const postcss = require('postcss');
 
-module.exports = config => {
+module.exports = (config) => {
   config.addLayoutAlias('base', 'layouts/base.njk');
 
   config.addPassthroughCopy('src/site/assets');
@@ -14,18 +15,7 @@ module.exports = config => {
   // -------
   // FILTERS
   // -------
-  config.addFilter('cssmin', code => {
-    const minified = new CleanCSS().minify(code);
-    if (minified.warnings.length >= 1)
-      console.warn('CleanCSS warnings:', minified.warnings);
-    if (minified.errors >= 1) {
-      console.error('CleanCSS errors:', minified.errors);
-      return code;
-    }
-    return minified.styles;
-  });
-
-  config.addFilter('jsmin', code => {
+  config.addFilter('jsmin', (code) => {
     const minified = Terser.minify(code, { warnings: 'verbose' });
     if (minified.warnings) console.warn('Terser warnings:', minified.warnings);
     if (minified.error) {
@@ -33,6 +23,34 @@ module.exports = config => {
       return code;
     }
     return minified.code;
+  });
+
+  // ----------
+  // SHORTCODES
+  // ----------
+  // - A shortcode returns content that is injected into the template. You can
+  //   use these however you’d like—you could even think of them as reusable
+  //   components.
+  // - Paired Shortcodes have a start and end tag—and allow you to nest other
+  //   template content inside.
+  // ----------
+  config.addPairedNunjucksAsyncShortcode('postcss', async (css) => {
+    try {
+      const result = await postcss([
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ]).process(css);
+      const minified = new CleanCSS().minify(result.css);
+      if (minified.warnings.length >= 1)
+        console.warn('CleanCSS warnings:', minified.warnings);
+      if (minified.errors >= 1) {
+        console.error('CleanCSS errors:', minified.errors);
+        return result.css;
+      }
+      return minified.styles;
+    } catch (error) {
+      console.error(error);
+    }
   });
 
   // ----------
