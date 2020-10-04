@@ -10,13 +10,13 @@
     <link rel="preload" as="font" crossOrigin="crossorigin" type="font/woff2" href="/assets/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2">
     <link rel="preload" as="font" crossOrigin="crossorigin" type="font/woff2" href="/assets/fonts/IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Regular-Latin1.woff2">
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <style>{% postcss %}{% include "css/main.css" %}{% endpostcss %}</style>
+    <style>{% postcss "css/main.css" %}{% include "css/main.css" %}{% endpostcss %}</style>
     <script>{{ second_phase_fonts_js | jsmin | safe }}</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking_id }}"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","{{ site.ga_tracking_id }}");</script>
   </head>
   <body>
-    <div class="page">
+    <div class="container mx-auto px-4 py-12">
       {% include "partials/masthead.njk" %}
       {{ content | safe }}
       {% include "partials/footer.njk" %}
