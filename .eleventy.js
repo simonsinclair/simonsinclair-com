@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlMinifier = require('html-minifier');
-const Terser = require('terser');
+const terser = require('terser');
 
 const { postcss } = require('./lib/shortcodes');
 
@@ -15,14 +15,17 @@ module.exports = (config) => {
   // -------
   // FILTERS
   // -------
-  config.addFilter('jsmin', (code) => {
-    const minified = Terser.minify(code, { warnings: 'verbose' });
-    if (minified.warnings) console.warn('Terser warnings:', minified.warnings);
-    if (minified.error) {
-      console.error('Terser error:', minified.error);
-      return code;
+  // - Filters are used to transform or modify content.
+  // -------
+  config.addNunjucksAsyncFilter('jsmin', async (code, callback) => {
+    if (process.env.NODE_ENV !== 'production') callback(null, code);
+    try {
+      const result = await terser.minify(code);
+      callback(null, result.code);
+    } catch (error) {
+      console.error(error);
+      callback(null, code);
     }
-    return minified.code;
   });
 
   // ----------
@@ -41,11 +44,11 @@ module.exports = (config) => {
   // ----------
   config.addTransform('htmlmin', (code, outputPath) => {
     if (typeof outputPath === 'string' && outputPath.endsWith('.html')) {
-      const minified = HtmlMinifier.minify(code, {
+      const result = HtmlMinifier.minify(code, {
         collapseWhitespace: true,
         removeComments: true,
       });
-      return minified;
+      return result;
     }
 
     return code;
