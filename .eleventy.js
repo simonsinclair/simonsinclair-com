@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlMinifier = require('html-minifier');
-const CleanCSS = require('clean-css');
 const Terser = require('terser');
-const postcss = require('postcss');
+
+const { postcss } = require('./lib/shortcodes');
 
 module.exports = (config) => {
   config.addLayoutAlias('base', 'layouts/base.njk');
@@ -34,24 +34,7 @@ module.exports = (config) => {
   // - Paired Shortcodes have a start and end tag—and allow you to nest other
   //   template content inside.
   // ----------
-  config.addPairedNunjucksAsyncShortcode('postcss', async (css) => {
-    try {
-      const result = await postcss([
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ]).process(css);
-      const minified = new CleanCSS().minify(result.css);
-      if (minified.warnings.length >= 1)
-        console.warn('CleanCSS warnings:', minified.warnings);
-      if (minified.errors >= 1) {
-        console.error('CleanCSS errors:', minified.errors);
-        return result.css;
-      }
-      return minified.styles;
-    } catch (error) {
-      console.error(error);
-    }
-  });
+  config.addPairedNunjucksAsyncShortcode('postcss', postcss);
 
   // ----------
   // TRANSFORMS
