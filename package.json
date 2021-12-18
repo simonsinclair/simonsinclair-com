@@ -12,7 +12,7 @@
     "build": "npx tailwindcss -mi ./src/main.css -o ./public/main.css",
     "dev": "npx tailwindcss -i ./src/main.css -o ./public/main.css --watch",
     "serve": "firebase serve -p 8080",
-    "deploy": "npm run build && npm run test && firebase deploy"
+    "deploy": "npm run build && firebase deploy"
   },
   "author": "Simon Sinclair",
   "license": "UNLICENSED",
