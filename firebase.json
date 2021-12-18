@@ -8,7 +8,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache, public, max-age=300"
+            "value": "no-cache, public, max-age=600"
           }
         ]
       },
@@ -17,7 +17,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache, public, max-age=300"
+            "value": "no-cache, public, max-age=600"
           }
         ]
       },
@@ -26,7 +26,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "no-cache, public, max-age=300"
+            "value": "no-cache, public, max-age=600"
           }
         ]
       }
