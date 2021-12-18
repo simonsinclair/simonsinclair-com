@@ -1,9 +1,7 @@
-# Files
 .DS_Store
 *.log
 
-# Dirs.
 /.firebase
 /coverage
 /node_modules
-/public
+/public/main.css
