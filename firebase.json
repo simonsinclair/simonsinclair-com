@@ -29,15 +29,6 @@
             "value": "no-cache, public, max-age=300"
           }
         ]
-      },
-      {
-        "source": "**/*.jpg",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "no-cache, public, max-age=300"
-          }
-        ]
       }
     ]
   }
