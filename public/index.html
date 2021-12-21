@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="text-[18px] text-gray-700 h-full">
+<html lang="en-GB" class="text-[18px] h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,6 +10,17 @@
     />
     <link rel="preconnect" href="https://www.google-analytics.com" />
     <link href="main.css" rel="stylesheet" />
+    <script>
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-128283216-1"
@@ -23,17 +34,19 @@
       gtag('config', 'UA-128283216-1');
     </script>
   </head>
-  <body class="px-4 sm:px-8 lg:px-24 selection:bg-blue-200 selection:text-blue-700">
+  <body
+    class="px-4 sm:px-8 lg:px-24 selection:bg-blue-200 selection:text-blue-800 dark:bg-gray-900 text-gray-700 dark:text-gray-200 dark:antialiased"
+  >
     <div class="flex flex-col min-h-screen sm:max-w-2xl lg:max-w-3xl">
       <div class="flex-grow flex items-center">
         <main
-          class="flex flex-col gap-4 sm:gap-8 py-12 text-2xl sm:text-3xl lg:text-4xl text-gray-600 font-light"
+          class="flex flex-col gap-4 sm:gap-8 py-12 text-2xl sm:text-3xl lg:text-4xl"
         >
-          <p class="text-gray-700 font-normal">
+          <p>
             Simon Sinclair is a Software Engineer who specialises in
             front&#8209;end web development.
           </p>
-          <p>
+          <p class="text-gray-600 dark:text-gray-300 font-light">
             He worked at the
             <a href="https://www.bbc.co.uk/"
               ><abbr title="British Broadcasting Corporation">BBC</abbr></a
@@ -41,7 +54,7 @@
             for nine years on products used by hundreds of millions of people
             around the world every week.
           </p>
-          <p>
+          <p class="text-gray-600 dark:text-gray-300 font-light">
             Today, he leads the front&#8209;end team at a successful
             start&#8209;up in London, <abbr title="United Kingdom">UK</abbr>,
             and is a co&#8209;creator of&nbsp;<a
@@ -51,10 +64,15 @@
           </p>
         </main>
       </div>
-      <footer class="text-base flex gap-4 justify-between border-t py-12">
+      <footer
+        class="text-base flex gap-4 justify-between border-t dark:border-t-gray-800 py-12"
+      >
         <div class="flex flex-col justify-between gap-2">
           <a href="mailto:simon@simonsinclair.com">simon@simonsinclair.com</a>
-          <small class="leading-[1.5rem]">&copy; 2021 Simon Sinclair.</small>
+          <small
+            class="leading-[1.5rem] dark:text-gray-300 dark:subpixel-antialiased"
+            >&copy; 2021 Simon Sinclair.</small
+          >
         </div>
         <ul class="flex flex-col gap-2">
           <li>
