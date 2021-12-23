@@ -82,12 +82,16 @@
       src="https://www.googletagmanager.com/gtag/js?id=UA-128283216-1"
     ></script>
     <script>
+      const GA_MEASUREMENT_ID = 'UA-128283216-1';
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
+      if (window.location.hostname === 'localhost') {
+        window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      }
       gtag('js', new Date());
-      gtag('config', 'UA-128283216-1');
+      gtag('config', GA_MEASUREMENT_ID);
     </script>
   </body>
 </html>
