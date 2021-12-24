@@ -6,8 +6,6 @@
   "repository": "github:simonsinclair/simonsinclair-com",
   "main": "",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
     "start": "npm run build && npm run serve",
     "build": "npx tailwindcss -mi ./src/main.css -o ./public/main.css",
     "dev": "npx tailwindcss -i ./src/main.css -o ./public/main.css --watch",
@@ -21,7 +19,6 @@
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
-    "jest": "^27.4.5",
     "prettier": "2.5.1",
     "tailwindcss": "^3.0.7"
   }
