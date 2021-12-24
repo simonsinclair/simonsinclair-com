@@ -6,6 +6,7 @@
   "repository": "github:simonsinclair/simonsinclair-com",
   "main": "",
   "scripts": {
+    "test": "playwright test",
     "start": "npm run build && npm run serve",
     "build": "npx tailwindcss -mi ./src/main.css -o ./public/main.css",
     "dev": "npx tailwindcss -i ./src/main.css -o ./public/main.css --watch",
