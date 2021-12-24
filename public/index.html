@@ -13,21 +13,13 @@
       (() => {
         let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (isDark) document.documentElement.classList.add('dark');
-
         window.addEventListener('DOMContentLoaded', () => {
           const themeButton = document.getElementById('theme-button');
-          const setThemeButtonText = (isDark) => {
-            if (isDark) {
-              themeButton.firstElementChild.textContent = 'Use light theme';
-            } else {
-              themeButton.firstElementChild.textContent = 'Use dark theme';
-            }
-          };
-          setThemeButtonText(isDark);
+          if (isDark) themeButton.setAttribute('aria-pressed', 'true');
           themeButton.addEventListener('click', () => {
             isDark = !isDark;
             document.documentElement.classList.toggle('dark');
-            setThemeButtonText(isDark);
+            themeButton.setAttribute('aria-pressed', isDark);
           });
         });
       })();
@@ -42,8 +34,9 @@
           type="button"
           id="theme-button"
           class="flex items-center justify-center rounded border dark:border-gray-800 lg:border-transparent lg:dark:border-transparent w-11 h-11 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800"
+          aria-pressed="false"
         >
-          <span class="sr-only"></span>
+          <span class="sr-only">Dark theme</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="hidden dark:block h-6 w-6"
@@ -58,7 +51,6 @@
               d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
             />
           </svg>
-
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="dark:hidden h-6 w-6"
