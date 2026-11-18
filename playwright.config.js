@@ -6,6 +6,11 @@ const config = {
   use: {
     baseURL: 'http://localhost:8080/',
   },
+  webServer: {
+    command: 'npm run serve',
+    port: 8080,
+    reuseExistingServer: true,
+  },
   projects: [
     {
       name: 'chromium',
